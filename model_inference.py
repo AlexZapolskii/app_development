@@ -92,5 +92,11 @@ os.system(f'wget {url}')
 img = plt.imread(f_name)
 img = resize(img, (299, 299))
 
+from PIL import Image
+
+
 for i in range(5):
     print(generate_caption(img, restored_network, t=5.))
+
+img = Image.open(f_name)
+img.show()
