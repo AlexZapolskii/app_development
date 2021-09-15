@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage.transform import resize
+import flask
 import json
 from caption_net import CaptionNet
 from beheaded_inception3 import beheaded_inception_v3
@@ -14,6 +15,12 @@ from IPython.display import clear_output
 from torch import nn
 import torch.nn.functional as F
 import pickle 
+import warnings
+
+import numpy as np
+import pandas as pd
+
+warnings.filterwarnings("ignore")
 
 with open('word_to_index.pickle', 'rb') as fp:
     word_to_index = pickle.load(fp)
